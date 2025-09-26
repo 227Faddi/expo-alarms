@@ -1,12 +1,10 @@
-import type { StyleProp, ViewStyle } from 'react-native';
+import type { StyleProp, ViewStyle } from "react-native";
 
 export type OnLoadEventPayload = {
   url: string;
 };
 
-export type ExpoAlarmsModuleEvents = {
-  onChange: (params: ChangeEventPayload) => void;
-};
+export type ExpoAlarmsModuleEvents = {};
 
 export type ChangeEventPayload = {
   value: string;
