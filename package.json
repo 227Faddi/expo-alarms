@@ -28,9 +28,7 @@
   "author": "227Faddi <falukhouma27@gmail.com> (https://github.com/227Faddi)",
   "license": "MIT",
   "homepage": "https://github.com/227Faddi/expo-alarms#readme",
-  "dependencies": {
-    "expo-native-configuration": "file:.."
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/react": "~19.1.0",
     "expo-module-scripts": "^5.0.7",

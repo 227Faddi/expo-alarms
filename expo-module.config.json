@@ -1,7 +1,10 @@
 {
   "platforms": ["apple", "android", "web"],
   "apple": {
-    "modules": ["ExpoAlarmsModule"]
+    "modules": ["ExpoAlarmsModule"],
+    "infoPlist": {
+      "NSAlarmKitUsageDescription": "This app uses alarms to help you manage your time and stay organized."
+    }
   },
   "android": {
     "modules": ["expo.modules.alarms.ExpoAlarmsModule"]
