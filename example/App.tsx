@@ -1,14 +1,18 @@
 import * as Alarms from "expo-alarms";
 import { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 export default function App() {
-  const [permission, setPermission] = useState("");
+  const [permission, setPermission] = useState(false);
 
   const askPermission = async () => {
-    const response = await Alarms.askPermission();
-    console.log(response);
+    const response = await Alarms.checkPermission();
     setPermission(response);
+  };
+
+  const handleAlarm = async () => {
+    const response = await Alarms.setAlarm();
+    console.log(response);
   };
 
   useEffect(() => {
@@ -17,8 +21,13 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>API key: {Alarms.getApiKey()}</Text>
-      <Text>Permission: {permission}</Text>
+      <Text>Permission: {permission ? "yes" : "no"}</Text>
+      <TouchableOpacity
+        onPress={handleAlarm}
+        style={{ backgroundColor: "red", padding: 8 }}
+      >
+        <Text>Set Alarm</Text>
+      </TouchableOpacity>
     </View>
   );
 }

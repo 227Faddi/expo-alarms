@@ -1,8 +1,8 @@
 import { NativeModule, requireNativeModule } from "expo";
 
 declare class ExpoAlarmsModule extends NativeModule {
-  getApiKey(): string;
-  askPermission(): Promise<string>;
+  setAlarm(): Promise<string>;
+  checkPermission(): Promise<boolean>;
 }
 
 // This call loads the native module object from the JSI.

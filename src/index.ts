@@ -1,9 +1,9 @@
 import ExpoAlarmsModule from "./ExpoAlarmsModule";
 
-export function getApiKey(): string {
-  return ExpoAlarmsModule.getApiKey();
+export function setAlarm(): Promise<string> {
+  return ExpoAlarmsModule.setAlarm();
 }
 
-export function askPermission(): Promise<string> {
-  return ExpoAlarmsModule.askPermission();
+export function checkPermission(): Promise<boolean> {
+  return ExpoAlarmsModule.checkPermission();
 }
