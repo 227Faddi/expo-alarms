@@ -1,7 +1,12 @@
 import { NativeModule, requireNativeModule } from "expo";
 
 declare class ExpoAlarmsModule extends NativeModule {
-  setAlarm(): Promise<string>;
+  setAlarm(
+    hour: number,
+    minute: number,
+    label: string,
+    weekdays?: number[]
+  ): Promise<string>;
   checkPermission(): Promise<boolean>;
 }
 

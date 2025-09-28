@@ -15,3 +15,10 @@ export type ExpoAlarmsViewProps = {
   onLoad: (event: { nativeEvent: OnLoadEventPayload }) => void;
   style?: StyleProp<ViewStyle>;
 };
+
+export type scheduleAlarmOptions = {
+  hour: number;
+  minute: number;
+  label: string;
+  weekdays?: number[];
+};
