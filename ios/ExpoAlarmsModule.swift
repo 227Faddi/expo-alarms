@@ -1,6 +1,7 @@
 import ExpoModulesCore
 import AlarmKit
 import AppIntents
+import ActivityKit
 
 public class ExpoAlarmsModule: Module {
     public func definition() -> ModuleDefinition {
@@ -76,10 +77,12 @@ public class ExpoAlarmsModule: Module {
                     
                     let intent = OpenAppIntent(id: id)
                     
+                    //let sound = AlertConfiguration.AlertSound.named("alarm.waw")
+                    
                     let configuration = AlarmManager.AlarmConfiguration(
                         schedule: schedule,
                         attributes: attributes,
-                        secondaryIntent: intent,
+                        stopIntent: intent,
                         sound: .default,
                     )
                     
@@ -130,7 +133,7 @@ public class ExpoAlarmsModule: Module {
     
     @available(iOS 26.0, *)
     struct OpenAppIntent: LiveActivityIntent {
-        static var title: LocalizedStringResource = "Opens App"
+        static var title: LocalizedStringResource = "Stop Alarm"
         static var openAppWhenRun: Bool = true
         static var isDiscoverable: Bool = false
         
